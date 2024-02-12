@@ -236,8 +236,17 @@ class TestShortcuts(LoggedInTest):
 
     def test_get_cache_special_chars(self):
         with self.recorder.use_cassette("geocaching_shortcut_getcache_special_chars"):
-            c = self.gc.get_cache("GC25WQJ")
-            self.assertEqual("How Do I Solve All These &#$@! Puzzle Caches?", c.name)
+            caches = [
+                ("GC25WQJ", "How Do I Solve All These &#$@! Puzzle Caches?"),
+                ("GC8AKHK", "How Do I Solve All These &#$@! Puzzle Caches?"),
+                ("GCA9PAE", "How do I solve all these $@&# Puzzles???"),
+                ("GC6PJNF", "How Do I Solve All These &#$@! Puzzle Caches?"),
+                ("GC1FJJT", "Mystery !#.%#!  )(.&#@ Cache"),
+            ]
+
+            for gc_code, expected_name in caches:
+                c = self.gc.get_cache(gc_code)
+                self.assertEqual(expected_name, c.name)
 
     def test_get_cache_by_guid(self):
         with self.recorder.use_cassette("geocaching_shortcut_getcache_by_guid"):
