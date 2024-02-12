@@ -84,7 +84,7 @@ class Geocaching(object):
 
             # return bs4.BeautifulSoup, JSON dict or raw requests.Response
             if expect == "soup":
-                return bs4.BeautifulSoup(res.text, "html.parser")
+                return bs4.BeautifulSoup(res.text, "lxml")
             elif expect == "json":
                 return res.json()
             elif expect == "raw":

@@ -124,7 +124,7 @@ def get_possible_attributes(*, session=None):
     session = session or requests.Session()
 
     try:
-        page = BeautifulSoup(session.get(_attributes_url).text, "html.parser")
+        page = BeautifulSoup(session.get(_attributes_url).text, "lxml")
     except requests.exceptions.ConnectionError as e:
         raise errors.Error("Cannot load attributes page.") from e
 
