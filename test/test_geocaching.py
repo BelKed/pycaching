@@ -248,6 +248,11 @@ class TestShortcuts(LoggedInTest):
                 c = self.gc.get_cache(gc_code)
                 self.assertEqual(expected_name, c.name)
 
+    def test_get_cache_special_description(self):
+        with self.recorder.use_cassette("geocaching_shortcut_getcache_special_description"):
+            cache = self.gc.get_cache("GCR0EF")
+            self.assertIn("This mystery starts as all good mysteries do", cache.description)
+
     def test_get_cache_by_guid(self):
         with self.recorder.use_cassette("geocaching_shortcut_getcache_by_guid"):
             cache = self.gc.get_cache(guid="15ad3a3d-92c1-4f7c-b273-60937bcc2072")
