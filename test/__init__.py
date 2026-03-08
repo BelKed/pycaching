@@ -39,6 +39,9 @@ def _cassette_will_record(cassette_name, *, record=None):
 
 
 def _refresh_recording_auth(geocaching):
+    if not cookie and (username == "USERNAMEPLACEHOLDER" or password == "PASSWORDPLACEHOLDER"):
+        return
+
     current_cookie = geocaching._session.cookies.get("gspkauth")
     if current_cookie and current_cookie != auth_cookie_placeholder:
         return

@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2022-08-25T19:41:18",
+      "recorded_at": "2026-03-08T03:07:25",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -18,7 +18,7 @@
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.28.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "recorded_at": "2022-08-25T19:41:19",
+      "recorded_at": "2026-03-08T03:07:25",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -71,7 +71,7 @@
             "gspkauth=<AUTH COOKIE>"
           ],
           "User-Agent": [
-            "python-requests/2.28.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
@@ -80,7 +80,7 @@
       "response": {
         "body": {
           "encoding": "UTF-8",
-          "string": "{\"status\":\"success\",\"data\":[{\"name\":\"Kohinoorka\",\"gc\":\"GC8CKQQ\",\"g\":\"0a786802-1a56-4c25-b52e-51e064ada861\",\"available\":true,\"archived\":false,\"subrOnly\":false,\"li\":false,\"fp\":\"15\",\"difficulty\":{\"text\":2.0,\"value\":\"2\"},\"terrain\":{\"text\":2.0,\"value\":\"2\"},\"hidden\":\"8/24/2019\",\"container\":{\"text\":\"Small\",\"value\":\"small.gif\"},\"type\":{\"text\":\"Traditional Cache\",\"value\":2},\"owner\":{\"text\":\"haj\u00edci\",\"value\":\"d9b10451-f71d-4d5a-be1d-7864fa92fdf0\"}}]}"
+          "string": "{\"status\":\"success\",\"data\":[{\"name\":\"Kohinoorka\",\"gc\":\"GC8CKQQ\",\"g\":\"0a786802-1a56-4c25-b52e-51e064ada861\",\"available\":true,\"archived\":false,\"subrOnly\":false,\"li\":false,\"fp\":\"21\",\"difficulty\":{\"text\":2.0,\"value\":\"2\"},\"terrain\":{\"text\":2.0,\"value\":\"2\"},\"hidden\":\"8/24/2019\",\"container\":{\"text\":\"Small\",\"value\":\"small.gif\"},\"type\":{\"text\":\"Traditional Cache\",\"value\":2},\"owner\":{\"text\":\"haj\u00edci\",\"value\":\"d9b10451-f71d-4d5a-be1d-7864fa92fdf0\"}}]}"
         },
         "headers": {
           "Cache-Control": [
@@ -93,7 +93,7 @@
             "application/json; charset=UTF-8"
           ],
           "Date": [
-            "Thu, 25 Aug 2022 19:41:19 GMT"
+            "Sun, 08 Mar 2026 03:07:24 GMT"
           ],
           "Expires": [
             "-1"
@@ -125,5 +125,5 @@
       }
     }
   ],
-  "recorded_with": "betamax/0.8.1"
+  "recorded_with": "betamax/0.9.0"
 }

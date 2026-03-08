@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2023-03-25T19:01:14",
+      "recorded_at": "2026-03-08T03:08:57",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -18,18 +18,18 @@
             "keep-alive"
           ],
           "Cookie": [
-            "gspkauth=<AUTH COOKIE>; Culture=en-US; __RequestVerificationToken=<AUTH COOKIE>"
+            "gspkauth=<AUTH COOKIE>; jwt=<AUTH COOKIE>; Culture=en-US"
           ],
           "User-Agent": [
-            "python-requests/2.28.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
-        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=49.74%2C13.38%2C49.73%2C13.4&take=200&asc=true&skip=0&sort=datelastvisited"
+        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=49.74%2C13.38%2C49.73%2C13.4&asc=true&sort=datelastvisited&take=200&skip=0"
       },
       "response": {
         "body": {
-          "base64_string": "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",
+          "base64_string": "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",
           "encoding": "utf-8",
           "string": ""
         },
@@ -37,29 +37,23 @@
           "Cache-Control": [
             "max-age=60, private"
           ],
-          "Connection": [
-            "Keep-Alive"
-          ],
           "Content-Encoding": [
             "gzip"
-          ],
-          "Content-Length": [
-            "2647"
           ],
           "Content-Type": [
             "application/json; charset=utf-8"
           ],
-          "CorrelationGuid": [
-            "05719242-28d1-41f4-a71f-29f36eed56df"
-          ],
           "Date": [
-            "Sat, 25 Mar 2023 19:01:13 GMT"
+            "Sun, 08 Mar 2026 03:08:56 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sat, 25 Mar 2023 20:00:13 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:07:56 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
           ],
           "Vary": [
             "Accept-Encoding"
@@ -72,15 +66,21 @@
           ],
           "X-XSS-Protection": [
             "1"
+          ],
+          "api-supported-versions": [
+            "1.0"
+          ],
+          "correlationguid": [
+            "663cf016-17a9-4b4f-aefd-7d76485c534a"
           ]
         },
         "status": {
           "code": 200,
           "message": "OK"
         },
-        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=49.74%2C13.38%2C49.73%2C13.4&take=200&asc=true&skip=0&sort=datelastvisited"
+        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=49.74%2C13.38%2C49.73%2C13.4&asc=true&sort=datelastvisited&take=200&skip=0"
       }
     }
   ],
-  "recorded_with": "betamax/0.8.1"
+  "recorded_with": "betamax/0.9.0"
 }

@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2022-02-22T16:29:04",
+      "recorded_at": "2026-03-08T03:12:08",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -18,10 +18,10 @@
             "keep-alive"
           ],
           "Cookie": [
-            "gspkauth=<AUTH COOKIE>; __RequestVerificationToken=<AUTH COOKIE>"
+            "gspkauth=<AUTH COOKIE>"
           ],
           "User-Agent": [
-            "python-requests/2.25.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
@@ -33,6 +33,9 @@
           "string": "{\"status\":\"success\",\"data\":{\"q\":\"Prague\",\"lat\":50.06694,\"lng\":14.46025}}"
         },
         "headers": {
+          "Access-Control-Expose-Headers": [
+            "Request-Context"
+          ],
           "Cache-Control": [
             "private"
           ],
@@ -43,7 +46,7 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Tue, 22 Feb 2022 16:29:02 GMT"
+            "Sun, 08 Mar 2026 03:12:08 GMT"
           ],
           "Request-Context": [
             "appId=cid-v1:019d82c2-5dd7-44cb-aa94-01e052f0d40c"
@@ -58,7 +61,7 @@
             "nosniff"
           ],
           "X-Execution-Time": [
-            "00:00:00.0266241"
+            "00:00:00.0897746"
           ],
           "X-Frame-Options": [
             "SAMEORIGIN"
@@ -75,5 +78,5 @@
       }
     }
   ],
-  "recorded_with": "betamax/0.8.1"
+  "recorded_with": "betamax/0.9.0"
 }

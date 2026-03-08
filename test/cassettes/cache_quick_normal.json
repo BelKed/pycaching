@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2022-02-22T16:26:05",
+      "recorded_at": "2026-03-08T03:07:09",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -18,7 +18,7 @@
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.25.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
@@ -51,7 +51,7 @@
       }
     },
     {
-      "recorded_at": "2022-02-22T16:26:05",
+      "recorded_at": "2026-03-08T03:07:10",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -71,7 +71,7 @@
             "gspkauth=<AUTH COOKIE>"
           ],
           "User-Agent": [
-            "python-requests/2.25.1"
+            "python-requests/2.32.3"
           ]
         },
         "method": "GET",
@@ -93,7 +93,7 @@
             "application/json; charset=UTF-8"
           ],
           "Date": [
-            "Tue, 22 Feb 2022 16:26:05 GMT"
+            "Sun, 08 Mar 2026 03:07:09 GMT"
           ],
           "Expires": [
             "-1"
@@ -125,5 +125,5 @@
       }
     }
   ],
-  "recorded_with": "betamax/0.8.1"
+  "recorded_with": "betamax/0.9.0"
 }

@@ -84,9 +84,41 @@ If you haven't written or modified any tests, tests can be run just like:
 
     pytest <test folder name>
 
-If you have written or modified tests, you must provide a username and password for testing. Don't
-worry, these will not leave your computer. Betamax will insert a placeholder when it records any
-new cassettes. To run new tests, first set up the following environment variables:
+If you have written or modified tests, replaying already recorded cassettes does not require any
+authentication. You only need credentials when Betamax has to record a missing cassette.
+
+For re-recording, the recommended workflow is:
+
+1. Log in to geocaching.com manually in your browser.
+2. Copy the authenticated ``gspkauth`` cookie from that browser session.
+3. Run the tests with the cookie plus your username and password:
+
+.. code-block:: bash
+
+    PYCACHING_TEST_COOKIE="your_gspkauth_cookie" \
+    PYCACHING_TEST_USERNAME="yourusername" \
+    PYCACHING_TEST_PASSWORD="yourpassword" \
+    pytest <test folder name>
+
+This is the preferred option when re-recording because most authenticated tests can reuse the
+cookie, while the small set of tests that explicitly verify username/password login still needs
+``PYCACHING_TEST_USERNAME`` and ``PYCACHING_TEST_PASSWORD``. Using the cookie reduces the number of
+programmatic login attempts, which helps avoid temporary CAPTCHA blocks from geocaching.com while
+running tests.
+
+If you only need to refresh cassettes for tests that require an authenticated session, you can run
+with just the cookie:
+
+.. code-block:: bash
+
+    PYCACHING_TEST_COOKIE="your_gspkauth_cookie" pytest <test folder name>
+
+Do not use cookie-only recording for the explicit password-login tests in ``tests_new``, because
+those tests are supposed to exercise the normal login flow and still need username/password.
+
+If you prefer to rely on programmatic login for recording, you can still provide only a username
+and password. Don't worry, these will not leave your computer. Betamax will insert placeholders
+when it records new cassettes:
 
 .. code-block:: bash
 
@@ -94,17 +126,6 @@ new cassettes. To run new tests, first set up the following environment variable
 
 Substitute your username for ``yourusername`` and your password for ``yourpassword``.
 This requires you to use a basic member account, otherwise you might see unexpected test failures.
-
-If regular programmatic login is blocked by CAPTCHA, you can record most authenticated tests by
-providing the ``gspkauth`` cookie from an already authenticated browser session instead:
-
-.. code-block:: bash
-
-    PYCACHING_TEST_COOKIE="your_gspkauth_cookie" pytest <test folder name>
-
-This works for tests that only need an authenticated session. Tests that explicitly verify the
-username/password login flow still require ``PYCACHING_TEST_USERNAME`` and
-``PYCACHING_TEST_PASSWORD``.
 
 To re-record a specific cassette in case of site changes, delete the corresponding JSON file and
 provide authentication as explained above. The missing cassette will be recorded for future usages.

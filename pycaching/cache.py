@@ -2,6 +2,7 @@
 
 import datetime
 import enum
+import json
 import logging
 import os
 import re
@@ -1134,11 +1135,13 @@ class Cache(object):
         log_page = self.geocaching._request(self._get_log_page_url())
 
         # find all valid log types for the cache
-        valid_types = {o["value"] for o in log_page.find("select", attrs={"name": "LogTypeId"}).find_all("option")}
+        next_data = log_page.find("script", id="__NEXT_DATA__")
+        page_props = json.loads(next_data.string)["props"]["pageProps"]
+        valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
 
         # find all static data fields needed for log
         hidden_inputs = log_page.find_all("input", type=["hidden", "submit"])
-        hidden_inputs = {i["name"]: i.get("value", "") for i in hidden_inputs}
+        hidden_inputs = {i["name"]: i.get("value", "") for i in hidden_inputs if i.has_attr("name")}
 
         return valid_types, hidden_inputs
 

@@ -9,6 +9,7 @@ from betamax import Betamax
 from betamax_serializers.pretty_json import PrettyJSONSerializer
 
 from pycaching.geocaching import Geocaching
+from test.cassette_sanitizer import sanitize_betamax_interaction
 
 USERNAME = os.environ.get("PYCACHING_TEST_USERNAME") or "USERNAMEPLACEHOLDER"
 PASSWORD = os.environ.get("PYCACHING_TEST_PASSWORD") or "PASSWORDPLACEHOLDER"

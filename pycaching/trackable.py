@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import json
+
 from pycaching import errors
 from pycaching.util import format_date, lazy_loaded
 
@@ -216,14 +218,16 @@ class Trackable(object):
         log_page = self.geocaching._request(self._log_page_url)
 
         # find all valid log types for the trackable (-1 removes "- select type of log -")
-        valid_types = {o["value"] for o in log_page.find_all("option") if o["value"] != "-1"}
+        next_data = log_page.find("script", id="__NEXT_DATA__")
+        page_props = json.loads(next_data.string)["props"]["pageProps"]
+        valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
 
         # find all static data fields needed for log
         hidden_inputs = log_page.find_all("input", type=["hidden"])
-        hidden_inputs = {i["name"]: i.get("value", "") for i in hidden_inputs}
+        hidden_inputs = {i["name"]: i.get("value", "") for i in hidden_inputs if i.has_attr("name")}
 
         # get user date format
-        date_format = log_page.find(id="ctl00_ContentBody_LogBookPanel1_uxDateFormatHint").text.strip("()")
+        date_format = page_props.get("gcUser", {}).get("dateFormat")
 
         return valid_types, hidden_inputs, date_format
 
