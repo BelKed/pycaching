@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2026-03-08T03:08:59",
+      "recorded_at": "2026-03-08T03:26:13",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -41,13 +41,13 @@
             "application/json"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:08:58 GMT"
+            "Sun, 08 Mar 2026 03:26:12 GMT"
           ],
           "ExecutionTime": [
-            "1.4981ms"
+            "1.701ms"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:07:58 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:25:12 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -71,10 +71,10 @@
             "1"
           ],
           "correlationguid": [
-            "786f06f7-079e-4e8b-858d-d1f9a52ea24c"
+            "8fea6140-92cc-4b93-a9ff-fd24662cd21f"
           ],
           "x-rate-limit-reset": [
-            "1"
+            "47"
           ]
         },
         "status": {
@@ -85,7 +85,7 @@
       }
     },
     {
-      "recorded_at": "2026-03-08T03:09:05",
+      "recorded_at": "2026-03-08T03:27:05",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -128,10 +128,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:09:05 GMT"
+            "Sun, 08 Mar 2026 03:27:05 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:04 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:26:04 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -155,7 +155,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "86ffdff3-54cc-4f77-9a56-39f911ab383e"
+            "bd1da58a-57ed-4b1c-82bf-b8541d7c271d"
           ]
         },
         "status": {

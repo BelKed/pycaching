@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2026-03-08T03:12:13",
+      "recorded_at": "2026-03-08T03:30:13",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -46,13 +46,13 @@
             "application/vnd.google-earth.kml+xml; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:12:12 GMT"
+            "Sun, 08 Mar 2026 03:30:13 GMT"
           ],
           "Request-Context": [
             "appId=cid-v1:019d82c2-5dd7-44cb-aa94-01e052f0d40c"
           ],
           "Set-Cookie": [
-            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:12:12 GMT; path=/; secure; HttpOnly",
+            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:30:13 GMT; path=/; secure; HttpOnly",
             "Culture=en-US; path=/; secure; HttpOnly"
           ],
           "Strict-Transport-Security": [

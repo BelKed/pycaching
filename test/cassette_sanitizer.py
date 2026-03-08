@@ -47,14 +47,6 @@ PLACEHOLDER_RULES = {
         re.compile(r'name="__VIEWSTATEGENERATOR"[^>]*value="([^"]+)"'),
         re.compile(r"__VIEWSTATEGENERATOR=([^&\"\s]+)"),
     ),
-    "<EVENTTARGET>": (
-        re.compile(r'name="__EVENTTARGET"[^>]*value="([^"]*)"'),
-        re.compile(r"__EVENTTARGET=([^&\"\s]*)"),
-    ),
-    "<EVENTARGUMENT>": (
-        re.compile(r'name="__EVENTARGUMENT"[^>]*value="([^"]*)"'),
-        re.compile(r"__EVENTARGUMENT=([^&\"\s]*)"),
-    ),
     "<USERNAME>": (
         re.compile(r'"username"\s*:\s*"([^"]+)"'),
         re.compile(r'"Username"\s*:\s*"([^"]+)"'),

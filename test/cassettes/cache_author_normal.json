@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2026-03-08T03:07:15",
+      "recorded_at": "2026-03-08T03:25:38",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -46,7 +46,7 @@
             "text/html; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:07:14 GMT"
+            "Sun, 08 Mar 2026 03:25:38 GMT"
           ],
           "Expires": [
             "-1"
@@ -61,7 +61,7 @@
             "appId=cid-v1:019d82c2-5dd7-44cb-aa94-01e052f0d40c"
           ],
           "Set-Cookie": [
-            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:07:15 GMT; path=/; secure; HttpOnly",
+            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:25:38 GMT; path=/; secure; HttpOnly",
             "Culture=und; path=/; secure; HttpOnly"
           ],
           "Strict-Transport-Security": [
@@ -88,7 +88,7 @@
       }
     },
     {
-      "recorded_at": "2026-03-08T03:07:16",
+      "recorded_at": "2026-03-08T03:25:39",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -133,7 +133,7 @@
             "text/html; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:07:15 GMT"
+            "Sun, 08 Mar 2026 03:25:38 GMT"
           ],
           "Expires": [
             "-1"
@@ -145,7 +145,7 @@
             "appId=cid-v1:019d82c2-5dd7-44cb-aa94-01e052f0d40c"
           ],
           "Set-Cookie": [
-            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:07:15 GMT; path=/; secure; HttpOnly",
+            "gspkauth=<AUTH COOKIE>; domain=.geocaching.com; expires=Wed, 08-Apr-2026 03:25:38 GMT; path=/; secure; HttpOnly",
             "Culture=und; path=/; secure; HttpOnly",
             "__RequestVerificationToken=<AUTH COOKIE>; path=/; HttpOnly"
           ],

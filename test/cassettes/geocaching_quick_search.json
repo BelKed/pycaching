@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2026-03-08T03:08:57",
+      "recorded_at": "2026-03-08T03:26:09",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -44,10 +44,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:08:56 GMT"
+            "Sun, 08 Mar 2026 03:26:09 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:07:56 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:25:08 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -71,7 +71,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "663cf016-17a9-4b4f-aefd-7d76485c534a"
+            "32b5d706-f08e-43e2-8603-162dfff212a9"
           ]
         },
         "status": {

@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2026-03-08T03:09:09",
+      "recorded_at": "2026-03-08T03:27:12",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -44,10 +44,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:09:08 GMT"
+            "Sun, 08 Mar 2026 03:27:12 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:08 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:26:11 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -71,7 +71,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "7acbb568-c21c-49de-8bb4-95331435e116"
+            "b3d7c2ac-8914-458f-a005-11377c16ae3c"
           ]
         },
         "status": {
@@ -82,7 +82,7 @@
       }
     },
     {
-      "recorded_at": "2026-03-08T03:09:09",
+      "recorded_at": "2026-03-08T03:27:12",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -125,10 +125,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:09:09 GMT"
+            "Sun, 08 Mar 2026 03:27:12 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:08 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:26:11 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -152,7 +152,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "0a794bd2-b13a-468e-a6ed-d2637c13fc05"
+            "e33995d4-1167-44db-950e-d59ea247615b"
           ]
         },
         "status": {
@@ -163,7 +163,7 @@
       }
     },
     {
-      "recorded_at": "2026-03-08T03:09:09",
+      "recorded_at": "2026-03-08T03:27:12",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -206,10 +206,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:09:09 GMT"
+            "Sun, 08 Mar 2026 03:27:12 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:08 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:26:11 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -233,7 +233,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "8119d4f1-b29d-4fe3-b6fc-9c3e69961567"
+            "7c958c51-f8e8-4c5f-a589-59cc4b6f01db"
           ]
         },
         "status": {
@@ -244,7 +244,91 @@
       }
     },
     {
-      "recorded_at": "2026-03-08T03:09:10",
+      "recorded_at": "2026-03-08T03:27:13",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Cookie": [
+            "gspkauth=<AUTH COOKIE>; jwt=<AUTH COOKIE>"
+          ],
+          "User-Agent": [
+            "python-requests/2.32.3"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=3"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAAyWLsW7CQBAFeyT+4bQSrtAZ7EMESycKarqUbtZ4hU8GztndAxLEvyeOq6eZ0XvNZ8aAKGqSQ2wJKuOK3fLfEnPkI4ngefTwquE6UQ1VDZ8xmivevg3TVyJRqeEN0zNxGA+d6lDl+YMaIeRTZ88c062VgbC3TfgZSz6l/F7sm/j0m5XdukVxWJe2/Phbt7PbcmRnXYZy8sqJMomsvkWlC4regwSlNlPsya8z6cPgS5jP3r8pJ7Yk3AAAAA==",
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Sun, 08 Mar 2026 03:27:12 GMT"
+          ],
+          "ExecutionTime": [
+            "1.8ms"
+          ],
+          "Set-Cookie": [
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:26:11 GMT; domain=.geocaching.com; path=/; secure; httponly"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=31536000; includeSubDomains"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "SAMEORIGIN"
+          ],
+          "X-Powered-By": [
+            "ASP.NET"
+          ],
+          "X-XSS-Protection": [
+            "1"
+          ],
+          "correlationguid": [
+            "b0e41ed0-e185-4812-8137-a7be0e670299"
+          ],
+          "x-rate-limit-reset": [
+            "48"
+          ]
+        },
+        "status": {
+          "code": 429,
+          "message": "Too Many Requests"
+        },
+        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=3"
+      }
+    },
+    {
+      "recorded_at": "2026-03-08T03:28:06",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -287,10 +371,10 @@
             "application/json; charset=utf-8"
           ],
           "Date": [
-            "Sun, 08 Mar 2026 03:09:09 GMT"
+            "Sun, 08 Mar 2026 03:28:05 GMT"
           ],
           "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:09 GMT; domain=.geocaching.com; path=/; secure; httponly"
+            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:27:05 GMT; domain=.geocaching.com; path=/; secure; httponly"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000; includeSubDomains"
@@ -314,7 +398,7 @@
             "1.0"
           ],
           "correlationguid": [
-            "e024d7c0-b033-4929-b3f0-0f25acccf89f"
+            "6ac02dca-b27f-4c31-bf18-904b25e0f7be"
           ]
         },
         "status": {
@@ -322,252 +406,6 @@
           "message": "OK"
         },
         "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=3"
-      }
-    },
-    {
-      "recorded_at": "2026-03-08T03:09:10",
-      "request": {
-        "body": {
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Cookie": [
-            "gspkauth=<AUTH COOKIE>; jwt=<AUTH COOKIE>"
-          ],
-          "User-Agent": [
-            "python-requests/2.32.3"
-          ]
-        },
-        "method": "GET",
-        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=4"
-      },
-      "response": {
-        "body": {
-          "base64_string": "H4sIAAAAAAAAA41TS47aQBC9SqvXDriNzQjvEMmQTRQ0ECVSNIvCXUCHptupbjMiiCPkADnCHCKbfO6VMkNAkUYokjcuv1fv1avyXhKGxsYgy497abQsc5WrXpEm0sEGZSlfE2hn1n4LIjZkQjTVGsSb4WQofjzKRFZet7DxKP8w67/nQk24Mc3mrbM7WS7ABkzkAraeTMSJN67VGgxUIpfoK6hWONvV3CFrW7kIxiGdK9osFqZif7vja0QiBshSdQqGt+RphNhwRzZc+xBRj7wnbRxE5OpeWogmNq3FIu2onuol0nq3PNVU3un1Bv3iwFLI2ja8I8vTdP96617mWkEYo4++ofNYtYUK9UvWYk6WqvxFmvEzS9Py+DDLP/A8rZFTTpM7NR68uuUvTUA6Zbx6yliyDQsh3vrGXbpm/bZrdjNT2blrJOAtzC2OGBqP0xMujedo5DT+/oba//qKYf3zu1gTfDquiYHEMcrRF6xWBrgGMZKZN8ekTtvvn/d+h5XfbNBp1GLhSayNDswxYVjX1lStuCwjNXhInqhttCfucMtRtgiR5d2bq6ziwpoArQU4LZYE86ukrPiHZNxSOASa766y8stRTyOCjStB+LkxhPq62iWUSTNniOD4Xag98e1x5v+jrYpnwjFOPPD/wPfxLPX+cM+b9hH4IpXKB+nhD+z8ZVauAwAA",
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Cache-Control": [
-            "max-age=60, private"
-          ],
-          "Content-Encoding": [
-            "gzip"
-          ],
-          "Content-Type": [
-            "application/json; charset=utf-8"
-          ],
-          "Date": [
-            "Sun, 08 Mar 2026 03:09:10 GMT"
-          ],
-          "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:09 GMT; domain=.geocaching.com; path=/; secure; httponly"
-          ],
-          "Strict-Transport-Security": [
-            "max-age=31536000; includeSubDomains"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Vary": [
-            "Accept-Encoding"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Frame-Options": [
-            "SAMEORIGIN"
-          ],
-          "X-XSS-Protection": [
-            "1"
-          ],
-          "api-supported-versions": [
-            "1.0"
-          ],
-          "correlationguid": [
-            "806395a0-748f-49f9-ac6e-7aaf77e50e72"
-          ]
-        },
-        "status": {
-          "code": 200,
-          "message": "OK"
-        },
-        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=4"
-      }
-    },
-    {
-      "recorded_at": "2026-03-08T03:09:10",
-      "request": {
-        "body": {
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Cookie": [
-            "gspkauth=<AUTH COOKIE>; jwt=<AUTH COOKIE>"
-          ],
-          "User-Agent": [
-            "python-requests/2.32.3"
-          ]
-        },
-        "method": "GET",
-        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=5"
-      },
-      "response": {
-        "body": {
-          "base64_string": "H4sIAAAAAAAAAyWLsW7CQBAFeyT+4bQSrqJzsA8Blk4pqNNRulnjFT4ZOGd3jwQQ/w6Oq6eZ0XvMZ8aAKGqSXWwJKuOK7ce/JebI3ySCx9HDo4bzRDVUNexjNGe83AzTTyJRqeEJ0zNxGA+d6lDl+S81QsiHzh45pksrA2Fvm3AfSz6l/Fp8NfHPrz7t2i2K3bK05ea9bmvX5cjOugzl4JUTZRJZfYtKJxS9BglKbabYk19m0ofBr2A+e74AidL2q9wAAAA=",
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Content-Encoding": [
-            "gzip"
-          ],
-          "Content-Type": [
-            "application/json"
-          ],
-          "Date": [
-            "Sun, 08 Mar 2026 03:09:10 GMT"
-          ],
-          "ExecutionTime": [
-            "1.692ms"
-          ],
-          "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:08:09 GMT; domain=.geocaching.com; path=/; secure; httponly"
-          ],
-          "Strict-Transport-Security": [
-            "max-age=31536000; includeSubDomains"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Vary": [
-            "Accept-Encoding"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Frame-Options": [
-            "SAMEORIGIN"
-          ],
-          "X-Powered-By": [
-            "ASP.NET"
-          ],
-          "X-XSS-Protection": [
-            "1"
-          ],
-          "correlationguid": [
-            "51927a0c-4736-412c-9e7a-ea59deb53751"
-          ],
-          "x-rate-limit-reset": [
-            "50"
-          ]
-        },
-        "status": {
-          "code": 429,
-          "message": "Too Many Requests"
-        },
-        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=5"
-      }
-    },
-    {
-      "recorded_at": "2026-03-08T03:10:06",
-      "request": {
-        "body": {
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Cookie": [
-            "gspkauth=<AUTH COOKIE>; jwt=<AUTH COOKIE>"
-          ],
-          "User-Agent": [
-            "python-requests/2.32.3"
-          ]
-        },
-        "method": "GET",
-        "uri": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=5"
-      },
-      "response": {
-        "body": {
-          "base64_string": "H4sIAAAAAAAAA41Uy47aMBT9FcvrAM6DR7KjVEMfqooGOl1UszDOhVjj2Mh2QHSGL5lVP2C+gn5Yb1IapHaKkLIgl3vuOef6OI/UgquUdzT79khlTrNBPBql4SigmpdAM/qRe8jt8YfixG275O744jl5eiJzjy/SV45MuC+whSsaUGHyGjSdDN+MWISFjYVSVuVnrfY0W3HlIKArvjVWepgZqWvmdDgM6BqM4KKAxX6DE5J6lPZcarC/K/2A5nK1kgLV4qgwoB6sxYbmdwOde456aMaQ1jiUPTHG5lKjA6w+UsU9Cq4F9lmXpWwwQF5l9PpUDZNunKZYPSAXILlyX6xCO70/4npnYwV3UzDeVLb1tVFcQP4W6RATsXDYYaNOlCwYy5oHUWaHhmotp0XNbhM2nXzCfyoH9rTyu/eL8QeKIhR3/sZU+jwzGnRY3GHDRRhlLM6iQZclI0R7y8UDXyqYYLtvVmBhLQ1uh75TfKuPL6T8+ey8ITPLC94cFXZaXCWdfAdRyLrGvbdyWTX7OuUhStoofC0AlCi4tIQLAc5JJESUdOPNRklR89PM2woOwSlMLfYWhClL0DnkZGUseZC5uwhNwhY799YoBVeznsM7F6ClIFsJu4uIMG4h4y2ee91BoqQ3/AfVHHVrL/6vvzoY0vnLHqOz0lm1xBaCtxHNmtIRDdwu9xfh/bSF3xiTXwOJBn8zYnK02xiLdwfjcs2MsP/KsqQmO7zNGO5XofeHewyp8fiRyMIwSdnhFyeAhgN6BAAA",
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Cache-Control": [
-            "max-age=60, private"
-          ],
-          "Content-Encoding": [
-            "gzip"
-          ],
-          "Content-Type": [
-            "application/json; charset=utf-8"
-          ],
-          "Date": [
-            "Sun, 08 Mar 2026 03:10:05 GMT"
-          ],
-          "Set-Cookie": [
-            "jwt=<AUTH COOKIE>; expires=Sun, 08 Mar 2026 04:09:05 GMT; domain=.geocaching.com; path=/; secure; httponly"
-          ],
-          "Strict-Transport-Security": [
-            "max-age=31536000; includeSubDomains"
-          ],
-          "Transfer-Encoding": [
-            "chunked"
-          ],
-          "Vary": [
-            "Accept-Encoding"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Frame-Options": [
-            "SAMEORIGIN"
-          ],
-          "X-XSS-Protection": [
-            "1"
-          ],
-          "api-supported-versions": [
-            "1.0"
-          ],
-          "correlationguid": [
-            "c8b8accc-25a7-4f59-8e3b-1b84ce12d3d8"
-          ]
-        },
-        "status": {
-          "code": 200,
-          "message": "OK"
-        },
-        "url": "https://www.geocaching.com/api/proxy/web/search/v2?box=50.74%2C13.38%2C49.73%2C14.4&asc=true&sort=datelastvisited&take=1&skip=5"
       }
     }
   ],
