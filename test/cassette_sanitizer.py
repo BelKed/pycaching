@@ -64,13 +64,10 @@ PLACEHOLDER_RULES = {
         re.compile(r'"(?:homeCoords|HomeCoords)"\s*:\s*"([^"]+)"'),
         re.compile(r"(?:[?&;]saddr=)(-?\d+(?:\.\d+)?(?:%2C|,)-?\d+(?:\.\d+)?)"),
     ),
-    "<USER CREATED DATE>": (
-        re.compile(r'"dateCreated"\s*:\s*"([^"]+)"'),
-    ),
-    "<CLIENT IP COORDINATE>": (
-        re.compile(r'"clientIpCoordinate"\s*:\s*(\{[^}]+\})'),
-    ),
+    "<USER CREATED DATE>": (re.compile(r'"dateCreated"\s*:\s*"([^"]+)"'),),
+    "<CLIENT IP COORDINATE>": (re.compile(r'"clientIpCoordinate"\s*:\s*(\{[^}]+\})'),),
 }
+
 
 def sanitize_betamax_interaction(interaction, cassette):
     """Register placeholders for sensitive values found in one Betamax interaction."""

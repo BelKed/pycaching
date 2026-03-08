@@ -239,7 +239,7 @@ class Trackable(object):
             # Recorded cassettes can include unquoted placeholders (e.g. <USER ID>),
             # which are not valid JSON values. Convert them to null before parsing.
             next_data_json = re.sub(r'(?<!")<[^>]+>(?!")', "null", next_data_json)
-            next_data_json = re.sub(r'([:\[,\s-])0+(\d+)', r'\1\2', next_data_json)
+            next_data_json = re.sub(r"([:\[,\s-])0+(\d+)", r"\1\2", next_data_json)
             page_props = json.loads(next_data_json)["props"]["pageProps"]
             valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
             date_format = page_props.get("gcUser", {}).get("dateFormat")
