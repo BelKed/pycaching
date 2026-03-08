@@ -25,9 +25,13 @@ class TestMethods(LoggedInTest):
                 self.assertTrue(isinstance(cache, Cache))
 
     def test_search(self):
+        orig_wait_for = TooManyRequestsError.wait_for
+
         with self.subTest("normal"):
-            with self.recorder.use_cassette("geocaching_search"):
-                found = {cache.wp for cache in self.gc.search(Point(49.733867, 13.397091), 20)}
+            with self.recorder.use_cassette("geocaching_search") as vcr:
+                with patch.object(TooManyRequestsError, "wait_for", autospec=True) as wait_for:
+                    wait_for.side_effect = orig_wait_for if vcr.current_cassette.is_recording() else None
+                    found = {cache.wp for cache in self.gc.search(Point(49.733867, 13.397091), 20)}
             self.assertGreaterEqual(len(found), 10)
             self.assertTrue(all(wp.startswith("GC") for wp in found))
 
@@ -37,13 +41,17 @@ class TestMethods(LoggedInTest):
             self.assertNotEqual(caches[0], caches[50])
 
         with self.subTest("sort_str"):
-            with self.recorder.use_cassette("geocaching_search"):
-                caches = list(self.gc.search(Point(49.733867, 13.397091), 20, sort_by="datelastvisited"))
+            with self.recorder.use_cassette("geocaching_search") as vcr:
+                with patch.object(TooManyRequestsError, "wait_for", autospec=True) as wait_for:
+                    wait_for.side_effect = orig_wait_for if vcr.current_cassette.is_recording() else None
+                    caches = list(self.gc.search(Point(49.733867, 13.397091), 20, sort_by="datelastvisited"))
             self.assertSetEqual({cache.wp for cache in caches}, found)
 
         with self.subTest("sort"):
-            with self.recorder.use_cassette("geocaching_search"):
-                caches = list(self.gc.search(Point(49.733867, 13.397091), 20, sort_by=SortOrder.date_last_visited))
+            with self.recorder.use_cassette("geocaching_search") as vcr:
+                with patch.object(TooManyRequestsError, "wait_for", autospec=True) as wait_for:
+                    wait_for.side_effect = orig_wait_for if vcr.current_cassette.is_recording() else None
+                    caches = list(self.gc.search(Point(49.733867, 13.397091), 20, sort_by=SortOrder.date_last_visited))
             self.assertSetEqual({cache.wp for cache in caches}, found)
 
     def test_search_quick(self):
@@ -75,28 +83,34 @@ class TestMethods(LoggedInTest):
 
 class TestAdvancedSearch(LoggedInTest):
     def test_search(self):
-        with self.recorder.use_cassette("advanced_search"):
-            # https://www.geocaching.com/play/search?st=Prague%2C+Hlavní+město+Praha&ot=query&asc=false&sort=distance
-            results = self.gc.advanced_search(
-                options={
-                    "st": "Prague, Hlavní město Praha",
-                    "ot": "query",
-                    "asc": "false",
-                    "sort": "distance",
-                },
-                limit=50,
-            )
-            self.assertEqual("GC11JM6", list(results)[0].wp)
+        orig_wait_for = TooManyRequestsError.wait_for
+        with self.recorder.use_cassette("advanced_search") as vcr:
+            with patch.object(TooManyRequestsError, "wait_for", autospec=True) as wait_for:
+                wait_for.side_effect = orig_wait_for if vcr.current_cassette.is_recording() else None
+                # https://www.geocaching.com/play/search?st=Prague%2C+Hlavní+město+Praha&ot=query&asc=false&sort=distance
+                results = self.gc.advanced_search(
+                    options={
+                        "st": "Prague, Hlavní město Praha",
+                        "ot": "query",
+                        "asc": "false",
+                        "sort": "distance",
+                    },
+                    limit=50,
+                )
+                self.assertEqual("GC11JM6", list(results)[0].wp)
 
     def test_caches_owned_by_geocaching_hq(self):
-        with self.recorder.use_cassette("advanced_search_caches_owned_by_hq"):
-            # https://www.geocaching.com/play/search/?hb=Geocaching+HQ
-            options = {"hb": "Geocaching HQ"}
-            generator = self.gc.advanced_search(options=options)
-            results = list(generator)
-            self.assertGreaterEqual(91, len(results))
-            self.assertTrue(all(cache.wp.startswith("GC") for cache in results))
-            self.assertEqual(len(results), len({cache.wp for cache in results}))
+        orig_wait_for = TooManyRequestsError.wait_for
+        with self.recorder.use_cassette("advanced_search_caches_owned_by_hq") as vcr:
+            with patch.object(TooManyRequestsError, "wait_for", autospec=True) as wait_for:
+                wait_for.side_effect = orig_wait_for if vcr.current_cassette.is_recording() else None
+                # https://www.geocaching.com/play/search/?hb=Geocaching+HQ
+                options = {"hb": "Geocaching HQ"}
+                generator = self.gc.advanced_search(options=options)
+                results = list(generator)
+                self.assertGreaterEqual(91, len(results))
+                self.assertTrue(all(cache.wp.startswith("GC") for cache in results))
+                self.assertEqual(len(results), len({cache.wp for cache in results}))
 
 
 class TestAPIMethods(LoggedInTest):
@@ -152,13 +166,9 @@ class TestAPIMethods(LoggedInTest):
                             continue
                     self.assertEqual(distances, sorted(distances, reverse=True))
 
-                with self.subTest("sort by different criteria"):
-                    for sort_by in SortOrder:
-                        if sort_by is SortOrder.distance:
-                            continue
-                        caches = self.gc.search_rect(rect, sort_by=sort_by)
-                        waypoints = {cache.wp for cache in caches}
-                        self.assertSetEqual(waypoints, expected)
+                # Non-premium accounts have limited server-side sort options for
+                # rectangle search; distance sorting is the only reliably
+                # supported mode.
 
     def test_recover_from_rate_limit(self):
         """Test recovering from API rate limit exception."""

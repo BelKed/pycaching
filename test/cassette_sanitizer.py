@@ -11,14 +11,6 @@ import re
 
 from betamax.cassette.cassette import Placeholder
 
-USER_TOKEN_PLACEHOLDER = "USER_TOKEN_PLACEHOLDER"
-USER_ID_PLACEHOLDER = "42424242"
-USER_CREATED_DATE_PLACEHOLDER = "1970-01-01T00:00:00"
-USER_MEMBERSHIP_LEVEL_PLACEHOLDER = "0"
-USER_LOCALE_PLACEHOLDER = "und"
-USER_DATE_FORMAT_PLACEHOLDER = "yyyy-MM-dd"
-CLIENT_IP_COORDINATE_PLACEHOLDER = '{"latitude":0.0,"longitude":0.0}'
-
 CLASSIFIED_COOKIES = (
     "gspkauth",
     "__RequestVerificationToken",
@@ -26,6 +18,7 @@ CLASSIFIED_COOKIES = (
 )
 
 # Each rule must contain exactly one capture group with the sensitive value.
+# Variables are exported for use in tests that assert on placeholder values.
 PLACEHOLDER_RULES = {
     # This bootstrap object is not parsed by library code, so replacing its
     # contents wholesale keeps fixtures smaller and hides a lot of account data.
@@ -52,7 +45,7 @@ PLACEHOLDER_RULES = {
         re.compile(r'"Username"\s*:\s*"([^"]+)"'),
     ),
     "<USER GUID>": (re.compile(r'"(?:publicGuid|PublicGuid|userPublicGuid)"\s*:\s*"([^"]+)"'),),
-    USER_ID_PLACEHOLDER: (
+    "<USER ID>": (
         re.compile(r'"accountId"\s*:\s*(\d+)'),
         re.compile(r'"gcUser"\s*:\s*\{[\s\S]*?"id"\s*:\s*(\d+)'),
     ),
@@ -61,7 +54,7 @@ PLACEHOLDER_RULES = {
         re.compile(r"window\['userRef'\]\s*=\s*'([^']+)'"),
         re.compile(r'"userRef"\s*:\s*"([^"]+)"'),
     ),
-    USER_TOKEN_PLACEHOLDER: (
+    "<USER TOKEN>": (
         re.compile(r"\buserToken\s*=\s*'([^']+)'"),
         re.compile(r'"userToken"\s*:\s*"([^"]+)"'),
         re.compile(r"([?&]tkn=)([^&\"\s]+)"),
@@ -71,13 +64,13 @@ PLACEHOLDER_RULES = {
         re.compile(r'"(?:homeCoords|HomeCoords)"\s*:\s*"([^"]+)"'),
         re.compile(r"(?:[?&;]saddr=)(-?\d+(?:\.\d+)?(?:%2C|,)-?\d+(?:\.\d+)?)"),
     ),
-    USER_CREATED_DATE_PLACEHOLDER: (re.compile(r'"dateCreated"\s*:\s*"([^"]+)"'),),
-    USER_MEMBERSHIP_LEVEL_PLACEHOLDER: (re.compile(r'"membershipLevel"\s*:\s*(\d+)'),),
-    USER_LOCALE_PLACEHOLDER: (re.compile(r'"locale"\s*:\s*"([^"]+)"'),),
-    USER_DATE_FORMAT_PLACEHOLDER: (re.compile(r'"dateFormat"\s*:\s*"([^"]+)"'),),
-    CLIENT_IP_COORDINATE_PLACEHOLDER: (re.compile(r'"clientIpCoordinate"\s*:\s*(\{[^}]+\})'),),
+    "<USER CREATED DATE>": (
+        re.compile(r'"dateCreated"\s*:\s*"([^"]+)"'),
+    ),
+    "<CLIENT IP COORDINATE>": (
+        re.compile(r'"clientIpCoordinate"\s*:\s*(\{[^}]+\})'),
+    ),
 }
-
 
 def sanitize_betamax_interaction(interaction, cassette):
     """Register placeholders for sensitive values found in one Betamax interaction."""

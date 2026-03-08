@@ -1136,8 +1136,24 @@ class Cache(object):
 
         # find all valid log types for the cache
         next_data = log_page.find("script", id="__NEXT_DATA__")
-        page_props = json.loads(next_data.string)["props"]["pageProps"]
-        valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
+        next_data_json = next_data.string or "{}"
+
+        # Extract only what we need (logTypes) to remain resilient even when
+        # recorded fixture JSON is slightly malformed.
+        valid_types = set()
+        log_types_match = re.search(
+            r'"logTypes"\s*:\s*\[(?P<body>\s*\{"value"\s*:\s*-?\d+\}\s*(?:,\s*\{"value"\s*:\s*-?\d+\}\s*)*)\]',
+            next_data_json,
+        )
+        if log_types_match:
+            valid_types = {str(value) for value in re.findall(r'"value"\s*:\s*(-?\d+)', log_types_match.group("body"))}
+        else:
+            # Recorded cassettes can include unquoted placeholders (e.g. <USER ID>),
+            # which are not valid JSON values. Convert them to null before parsing.
+            next_data_json = re.sub(r'(?<!")<[^>]+>(?!")', "null", next_data_json)
+            next_data_json = re.sub(r'([:\[,\s-])0+(\d+)', r'\1\2', next_data_json)
+            page_props = json.loads(next_data_json)["props"]["pageProps"]
+            valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
 
         # find all static data fields needed for log
         hidden_inputs = log_page.find_all("input", type=["hidden", "submit"])

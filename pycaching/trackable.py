@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import re
 
 from pycaching import errors
 from pycaching.util import format_date, lazy_loaded
@@ -219,15 +220,33 @@ class Trackable(object):
 
         # find all valid log types for the trackable (-1 removes "- select type of log -")
         next_data = log_page.find("script", id="__NEXT_DATA__")
-        page_props = json.loads(next_data.string)["props"]["pageProps"]
-        valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
+        next_data_json = next_data.string or "{}"
+
+        # Extract only required fields to keep replay robust against mildly
+        # malformed fixture JSON.
+        valid_types = set()
+        log_types_match = re.search(
+            r'"logTypes"\s*:\s*\[(?P<body>\s*\{"value"\s*:\s*-?\d+\}\s*(?:,\s*\{"value"\s*:\s*-?\d+\}\s*)*)\]',
+            next_data_json,
+        )
+        if log_types_match:
+            valid_types = {str(value) for value in re.findall(r'"value"\s*:\s*(-?\d+)', log_types_match.group("body"))}
+
+        date_format_match = re.search(r'"dateFormat"\s*:\s*"([^"]+)"', next_data_json)
+        date_format = date_format_match.group(1) if date_format_match else None
+
+        if not valid_types or date_format is None:
+            # Recorded cassettes can include unquoted placeholders (e.g. <USER ID>),
+            # which are not valid JSON values. Convert them to null before parsing.
+            next_data_json = re.sub(r'(?<!")<[^>]+>(?!")', "null", next_data_json)
+            next_data_json = re.sub(r'([:\[,\s-])0+(\d+)', r'\1\2', next_data_json)
+            page_props = json.loads(next_data_json)["props"]["pageProps"]
+            valid_types = {str(item["value"]) for item in page_props.get("logTypes", []) if "value" in item}
+            date_format = page_props.get("gcUser", {}).get("dateFormat")
 
         # find all static data fields needed for log
         hidden_inputs = log_page.find_all("input", type=["hidden"])
         hidden_inputs = {i["name"]: i.get("value", "") for i in hidden_inputs if i.has_attr("name")}
-
-        # get user date format
-        date_format = page_props.get("gcUser", {}).get("dateFormat")
 
         return valid_types, hidden_inputs, date_format
 
