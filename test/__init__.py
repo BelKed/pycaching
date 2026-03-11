@@ -16,7 +16,6 @@ username = os.environ.get("PYCACHING_TEST_USERNAME") or "USERNAMEPLACEHOLDER"
 password = os.environ.get("PYCACHING_TEST_PASSWORD") or "PASSWORDPLACEHOLDER"
 cookie = os.environ.get("PYCACHING_TEST_COOKIE")
 auth_cookie_placeholder = "<AUTH COOKIE>"
-auth_cookie_placeholder = "<AUTH COOKIE>"
 
 
 cassette_dir = Path("test/cassettes")
@@ -86,17 +85,6 @@ class LoggedInTest(NetworkedTest):
             cls.gc._logged_in = True  # we're gonna trick it
             cls.gc._logged_username = username  # we're gonna trick it
             cls.gc._session = cls.session  # it got redefined; fix it
-
-        original_use_cassette = cls.recorder.use_cassette
-
-        def use_cassette_with_fresh_auth(cassette_name, *args, **kwargs):
-            # Setup cassettes can replace the live auth cookie with the scrubbed
-            # placeholder value. Refresh auth before recording the next cassette.
-            if _cassette_will_record(cassette_name, record=kwargs.get("record")):
-                _refresh_recording_auth(cls.gc)
-            return original_use_cassette(cassette_name, *args, **kwargs)
-
-        cls.recorder.use_cassette = use_cassette_with_fresh_auth
 
         original_use_cassette = cls.recorder.use_cassette
 
